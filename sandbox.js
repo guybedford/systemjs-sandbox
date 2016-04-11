@@ -38,7 +38,7 @@ editor.getSession().setTabSize(2);
 editor.getSession().setUseSoftTabs(true);
 editor.$blockScrolling = Infinity;
 
-var moduleName = System.decanonicalize('sandbox.js');
+var moduleName = System.decanonicalize('sandbox');
 
 System.config({
   meta: {
