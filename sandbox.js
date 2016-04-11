@@ -1,6 +1,6 @@
 import ace from 'ace';
 
-ace.config.set('basePath', System.decanonicalize('ace'));
+ace.config.set('basePath', System.decanonicalize('ace', __moduleName));
 
 document.body.style.margin = '0';
 document.body.style.width = '50%';
@@ -40,6 +40,14 @@ editor.getSession().setUseSoftTabs(true);
 editor.$blockScrolling = Infinity;
 
 var moduleName = System.decanonicalize('sandbox.js');
+
+System.config({
+  meta: {
+    [moduleName]: {
+      format: 'esm'
+    }
+  }
+});
 
 editor.getSession().on('change', () => {
   var code = editor.getSession().getValue();
