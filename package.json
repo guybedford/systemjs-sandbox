@@ -1,0 +1,8 @@
+{
+  "name": "guybedford/systemjs-sandbox",
+  "main": "sandbox.js",
+  "registry": "github",
+  "dependencies": {
+    "ace": "ajaxorg/ace-builds@^1.2.3"
+  }
+}
