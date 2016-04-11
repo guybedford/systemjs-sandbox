@@ -40,14 +40,6 @@ editor.$blockScrolling = Infinity;
 
 var moduleName = System.decanonicalize('sandbox');
 
-System.config({
-  meta: {
-    [moduleName]: {
-      format: 'esm'
-    }
-  }
-});
-
 editor.getSession().on('change', () => {
   var code = editor.getSession().getValue();
   localStorage.systemjs_sandbox_code = code;
@@ -73,11 +65,11 @@ function refresh(code) {
   var container = document.createElement('div');
   container.id = 'container';
   document.body.appendChild(container);
-  System.define(moduleName, code).then(() => {
+  System.define(moduleName, 'export let __module = true;' + code).then(() => {
     errWrapper.style.display = 'none'
   })
   .catch((e) => {
-    errContainer.innerHTML = e.toString().replace(/\n/g, '\n&nbsp;&nbsp;');
+    errContainer.innerHTML = e.toString().replace(/\n/g, '<br/>&nbsp;&nbsp;');
     errWrapper.style.display = 'block';
   })
   .then(() => {
