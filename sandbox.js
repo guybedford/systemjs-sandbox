@@ -5,11 +5,12 @@ document.body.style.margin = '0';
 document.body.style.width = '50%';
 
 var eContainer = document.createElement('div');
-eContainer.style.width = '50%';
+eContainer.style.width = '60%';
 eContainer.style.height = '100%';
 eContainer.style.position = 'fixed';
 eContainer.style.right = '0';
 eContainer.style.top = '0';
+eContainer.style.zIndex = 1000;
 
 var errWrapper = document.createElement('div');
 errWrapper.style.top = '0';
