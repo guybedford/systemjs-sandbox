@@ -1,5 +1,5 @@
 import ace from 'ace';
-ace.config.set('basePath', System.normalizeSync('ace//', __moduleName));
+ace.config.set('basePath', System.normalizeSync('ace/', __moduleName).split('/').slice(0, -1).join('/'));
 
 document.body.style.margin = '0';
 document.body.style.width = '50%';
